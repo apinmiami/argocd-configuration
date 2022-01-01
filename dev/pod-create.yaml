@@ -10,6 +10,6 @@
  spec:
     containers:
         - name: automation
-          image: vijayprabhu04/centos-automation
+          image: centos
           ports:
             - containerPort: 80
