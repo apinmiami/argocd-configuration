@@ -1,0 +1,15 @@
+# Through this yaml file we are creating sample pod in k8 cluster in specific namespace
+---
+ apiVersion: v1
+ kind: Pod
+ metadata:
+    name: sample-pod-deployment
+    namespace: application
+    labels:
+        name: sample 
+ spec:
+    containers:
+        - name: automation
+          image: vijayprabhu04/centos-automation
+          ports:
+            - containerPort: 80
