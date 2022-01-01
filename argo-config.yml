@@ -1,0 +1,20 @@
+apiversion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mypod-argo
+  namespace: application
+spec:
+  project: self-project # helps to group all pods into project
+  source:               # git hub repo which needs to be synced to argocd
+    repoURL: https://github.com/vijayprabhu04/argocd-configuration.git
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: application   # deploy all the pods in specified namespace
+  syncPolicy:
+    syncOptions:
+      - Createnamespace: true # creates the namespace if it is not exist
+    automated:
+      selfHeal: true # helps to overwrite the changes done manually and maintain the desired state
+      prune: true    # if any changes like delete or rename done in repo will also reflect in cluster by enabling this option
+
