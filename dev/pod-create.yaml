@@ -3,7 +3,7 @@
  apiVersion: v1
  kind: Pod
  metadata:
-    name: dev_pod
+    name: dev
     namespace: dev
     labels:
         name: dev 
