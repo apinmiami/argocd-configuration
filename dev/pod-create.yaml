@@ -4,7 +4,7 @@
  kind: Pod
  metadata:
     name: dev
-    namespace: dev
+    namespace: development
     labels:
         name: dev 
  spec:
@@ -13,3 +13,4 @@
           image: centos
           ports:
             - containerPort: 80
+          command: ["/bin/sh", "-ec", "sleep 1000"]
