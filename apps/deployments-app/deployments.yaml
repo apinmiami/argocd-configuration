@@ -17,3 +17,4 @@ spec:
       containers:
       - name: deployments
         image: centos
+        command: ["/bin/sh", "-ec", "sleep 1000"]
