@@ -4,12 +4,12 @@
  kind: Pod
  metadata:
     name: dev
-    namespace: applications
+    namespace: applications 
     labels:
-        name: dev 
+        name: simple
  spec:
     containers:
-        - name: automation
+        - name: simple
           image: centos
           ports:
             - containerPort: 80

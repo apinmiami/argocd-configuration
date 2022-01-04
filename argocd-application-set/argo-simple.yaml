@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample
+  name: simple-pod
   namespace: argocd
 spec:
   project: default
@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
     targetRevision: main
-    path: apps
+    path: apps/sample.yaml
     directory:
       recurse: true
   destination: 
