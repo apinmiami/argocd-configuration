@@ -8,16 +8,16 @@ spec:
 
   source:
     repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
-    targetRevision: main
-    path: dev
+    targetRevision: deployments
+    directory:
+      recurse: true
   destination: 
     server: https://kubernetes.default.svc
     namespace: development
 
   syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+    - CreateNamespace=true
