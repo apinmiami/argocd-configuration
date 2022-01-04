@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
     targetRevision: main
-    path: apps/sample.yaml
+    path: apps
     directory:
       recurse: true
   destination: 
