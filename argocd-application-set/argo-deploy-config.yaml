@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: deployment-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
+    targetRevision: main
+    path: apps/deployments-app
+    directory:
+      recurse: true
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: applications
+
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true

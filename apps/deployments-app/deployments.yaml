@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployments
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tire: backend
+  template:
+    metadata:
+      labels:
+        tire: nginx
+    spec:
+      containers:
+      - name: deployments
+        image: centos
