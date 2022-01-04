@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
     targetRevision: main
-    path: replicas-app
+    path: apps/replicas-app
     directory:
       recurse: true
   destination: 
