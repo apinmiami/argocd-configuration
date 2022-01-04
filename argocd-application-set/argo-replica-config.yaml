@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-sets
+  name: replica-app
   namespace: argocd
 spec:
   project: default
@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
     targetRevision: main
-    path: apps
+    path: replicas-app
     directory:
       recurse: true
   destination: 

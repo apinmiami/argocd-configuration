@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: applications
+  name: simple-app
   namespace: argocd
 spec:
   project: default
@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:vijayprabhu04/argocd-configuration.git
     targetRevision: main
-    path: apps
+    path: simple-app
     directory:
       recurse: true
   destination: 
